@@ -20,10 +20,9 @@ export class Task{
 const TaskCollection: Task[] = [
    { name: 'Отобразить список задач', id:2,done:false },
    { name: 'Добавление', id:3,done:false },
-   { name: 'Удалие', id:4,done:false },
+   { name: 'Удаление', id:4,done:false },
    { name: 'Редактирование', id:5,done:false },
-   { name: 'Хранение в памяти', id:5,done:false },
-
+   { name: 'Хранение в памяти', id:5,done:false }
 
 ]
 
