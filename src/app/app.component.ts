@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task,TaskCollection } from './task';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Todoist AngularJS';
-  tasks = TaskCollection;
+  tasks:TaskCollection;
+   clicked() :void {
+        let task = {name:'test',id:10,done:false};
+        //this.tasks.add(task); // не видит метод add
+        console.log(this.tasks); // почему undefined, а не []
+  }    
 }
 
 
-export class Task{
-  name:string;
-  id:number;
-  done:boolean;
-}
 
-const TaskCollection: Task[] = [
-   { name: 'Отобразить список задач', id:2,done:false },
-   { name: 'Добавление', id:3,done:false },
-   { name: 'Удаление', id:4,done:false },
-   { name: 'Редактирование', id:5,done:false },
-   { name: 'Хранение в памяти', id:5,done:false }
 
-]
 
 
