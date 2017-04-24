@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Todoist AngularJS';
+  tasks = TaskCollection;
 }
+
+
+export class Task{
+  name:string;
+  id:number;
+  done:boolean;
+}
+
+const TaskCollection: Task[] = [
+   { name: 'Отобразить список задач', id:2,done:false },
+   { name: 'Добавление', id:3,done:false },
+   { name: 'Удалие', id:4,done:false },
+   { name: 'Редактирование', id:5,done:false },
+   { name: 'Хранение в памяти', id:5,done:false },
+
+
+]
+
+
