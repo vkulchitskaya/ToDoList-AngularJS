@@ -8,11 +8,12 @@ import { Task,TaskCollection } from './task';
 })
 export class AppComponent {
   title = 'Todoist AngularJS';
-  tasks:TaskCollection;
+  tasks = new TaskCollection();
+  // По нажатию кнопки в список задач добавляется тестовая задача
    clicked() :void {
         let task = {name:'test',id:10,done:false};
-        //this.tasks.add(task); // не видит метод add
-        console.log(this.tasks); // почему undefined, а не []
+        this.tasks.add(task); 
+        console.log(this.tasks.taskCollection);
   }    
 }
 
