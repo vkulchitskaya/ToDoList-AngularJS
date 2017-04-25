@@ -17,7 +17,15 @@ export class TaskCollection {
         this.taskCollection = [];
     }
 
-    add(task) :void {
-        this.taskCollection.push(task);
-    }    
+    addTask(task) {
+        if (task.name !==""){
+            task.id=this.nextId(); 
+            this.taskCollection.push(task);
+        }
+    }
+     nextId() {
+        return this.taskCollection.reduce((prev, cur) => {
+            return (prev.id > cur.id) ? prev : cur;
+        }, new Task('', 0, false)).id + 1;
+    }
 }

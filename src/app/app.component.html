@@ -2,11 +2,18 @@
   {{title}}
 </h1>
 <form>
-    <input type="text" placeholder="Title...">
+    <input name="taskTitle" [(ngModel)]="taskTitle"  placeholder="Title...">
+   
     <button (click)="clicked()">Add</button>
 </form>
 <ul>
-  <!--<li *ngFor="let task of tasks">
-    <span>{{task.name}}</span>
-  </li> -->
+  <li *ngFor="let task of tasks.taskCollection" id={{task.id}} >
+    <label>
+      <input class="checkbox" type="checkbox">
+      <span class="checkbox-custom"></span>
+    </label>
+    <span class="task">{{task.name}}</span>
+    <span class="close">×</span>
+  </li>
+
 </ul> 

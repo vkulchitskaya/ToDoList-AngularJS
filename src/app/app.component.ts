@@ -9,10 +9,13 @@ import { Task,TaskCollection } from './task';
 export class AppComponent {
   title = 'Todoist AngularJS';
   tasks = new TaskCollection();
-  // По нажатию кнопки в список задач добавляется тестовая задача
+  taskTitle ='';
+ 
+
    clicked() :void {
-        let task = {name:'test',id:10,done:false};
-        this.tasks.add(task); 
+        let task = new Task(this.taskTitle,0,false);
+        this.tasks.addTask(task);
+        this.taskTitle ='' 
         console.log(this.tasks.taskCollection);
   }    
 }
