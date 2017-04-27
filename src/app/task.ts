@@ -13,8 +13,8 @@ export class Task{
 export class TaskCollection {
     taskCollection: Task[];
 
-    constructor() { 
-        this.taskCollection = [];
+    constructor(tasks = []) { 
+        this.taskCollection = tasks;
     }
 
     add(task) {
@@ -42,5 +42,10 @@ export class TaskCollection {
             }
         });
     }
+    serialize() {
+        return JSON.stringify(this.taskCollection);
+    }
+
+
 
 }

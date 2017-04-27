@@ -7,13 +7,13 @@
     <button (click)="addTask()">Add</button>
 </form>
 <ul>
-  <li *ngFor="let task of tasks.taskCollection" id={{task.id}} >
+  <li *ngFor="let task of storage.taskCollection.taskCollection" id={{task.id}} >
     <label>
-      <input (click)="performTask()" class="checkbox" type="checkbox">
+      <input (click)="performTask(task.id)" class="checkbox" type="checkbox" >
       <span class="checkbox-custom"></span>
     </label>
     <span class="task">{{task.name}}</span>
-    <span (click)="removeTask()" class="close">×</span>
+    <span (click)="removeTask(task.id)" class="close">×</span>
   </li>
 
 </ul> 
