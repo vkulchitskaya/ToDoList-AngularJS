@@ -17,15 +17,30 @@ export class TaskCollection {
         this.taskCollection = [];
     }
 
-    addTask(task) {
+    add(task) {
         if (task.name !==""){
             task.id=this.nextId(); 
             this.taskCollection.push(task);
         }
     }
-     nextId() {
+    remove(id) {
+        this.taskCollection = this.taskCollection.filter(function (v) {
+            return	v.id !== parseInt(id);
+        });
+    }
+
+    nextId() {
         return this.taskCollection.reduce((prev, cur) => {
             return (prev.id > cur.id) ? prev : cur;
         }, new Task('', 0, false)).id + 1;
     }
+
+    perform(id) {
+        this.taskCollection.forEach(function (item) {
+            if (item.id === Number(id)) {
+                item.done=!item.done;
+            }
+        });
+    }
+
 }
