@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'Todoist AngularJS';
   storage = new Storage();
   taskTitle ='';
+  test = false;
  
   addTask() {
     let task = new Task(this.taskTitle,0,false);
