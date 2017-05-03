@@ -1,6 +1,9 @@
 <h1>
   {{title}}
 </h1>
+<div id="wrapper">
+
+<div id="form"  style="float:left; margin-right:100px;">
 <form>
     <input name="taskTitle" [(ngModel)]="taskTitle"  placeholder="Title...">
    
@@ -9,13 +12,27 @@
 <ul>
   <li *ngFor="let task of storage.taskCollection.taskCollection" id={{task.id}} >
     <label>
-      <div *ngIf="task.done; then thenBlock else elseBlock"></div>
-      <ng-template #thenBlock><input (click)="performTask(task.id)" class="checkbox" type="checkbox"  checked></ng-template>
-      <ng-template #elseBlock><input (click)="performTask(task.id)" class="checkbox" type="checkbox" ></ng-template>
-      <span class="checkbox-custom"></span>
+
+<input *ngIf="task.done" (click)="performTask(task.id)" class="checkbox" type="checkbox"  checked>
+<input *ngIf="!task.done" (click)="performTask(task.id)" class="checkbox" type="checkbox"  >
+    <span class="checkbox-custom"></span>
     </label>
-    <span class="task">{{task.name}}</span>
+    <span *ngIf=!task.edit (dblclick)="editTask(task.id)" class="task" >{{task.name}}</span>
+    <input *ngIf=task.edit name="edit" [(ngModel)]="taskEdit" (blur)="setTitle(taskEdit,task.id)">
     <span (click)="removeTask(task.id)" class="close">×</span>
   </li>
 
 </ul> 
+</div>
+
+<div id="category" style="margin-left:50px;">
+  <span (click)="addCategory()">Add category</span>
+  <ul>
+    <li>Категория 1</li>
+    <li>Категория 2</li>
+    <li>Категория 3</li>
+  </ul> 
+</div>
+
+
+</div>
