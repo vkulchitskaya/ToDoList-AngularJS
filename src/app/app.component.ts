@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { Task,TaskCollection } from './task';
-import { Storage } from './storage';
+import { Task,TaskCollection } from './classes/task';
+import { Storage } from './classes/storage';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './templates/app.component.html',
+  styleUrls: ['./css/app.component.css']
 })
 export class AppComponent {
   title:string = 'Todoist AngularJS';
