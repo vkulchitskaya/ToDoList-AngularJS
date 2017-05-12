@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { Task,TaskCollection } from './classes/task';
 import { Storage } from './classes/storage';
+import { EntryField } from './entry-field.component'
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './templates/app.component.html',
-  styleUrls: ['./css/app.component.css']
+  directives : [EntryField],
+  styleUrls: ['./css/app.component.css'],
+  
 })
 export class AppComponent {
   title:string = 'Todoist AngularJS';
   storage:Storage = new Storage();
-  taskTitle:string ='';
+  taskTitle:string ='тест';
   taskEdit:string ='';
  
   addTask():void {

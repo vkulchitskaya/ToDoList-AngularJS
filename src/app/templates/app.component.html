@@ -2,10 +2,7 @@
    {{title}}
 </h1>
 <div id="wrapper">
-   <form>
-      <input name="taskTitle" [(ngModel)]="taskTitle"  placeholder="Title...">
-      <button (click)="addTask()">Add</button>
-   </form>
+   <entry-field></entry-field>
    <ul>
       <li *ngFor="let task of storage.taskCollection.taskCollection" id={{task.id}} >
          <label>
