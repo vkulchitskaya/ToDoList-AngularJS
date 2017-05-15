@@ -7,7 +7,6 @@ import { EntryField } from './entry-field.component'
 @Component({
   selector: 'app-root',
   templateUrl: './templates/app.component.html',
-  directives : [EntryField],
   styleUrls: ['./css/app.component.css'],
   
 })
