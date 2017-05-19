@@ -2,7 +2,8 @@
    {{title}}
 </h1>
 <div id="wrapper">
-   <entry-field></entry-field>
+   <h2>Количество кликов: {{clicks}}</h2>
+   <entry-field (onChanged)="onChanged($event)"></entry-field>
    <ul>
       <li *ngFor="let task of storage.taskCollection.taskCollection" id={{task.id}} >
          <label>
@@ -15,4 +16,5 @@
          <span (click)="removeTask(task.id)" class="close">×</span>
       </li>
    </ul>
+
 </div>

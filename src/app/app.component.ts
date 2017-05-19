@@ -13,7 +13,7 @@ import { EntryField } from './entry-field.component'
 export class AppComponent {
   title:string = 'Todoist AngularJS';
   storage:Storage = new Storage();
-  taskTitle:string ='тест';
+  taskTitle:string ='';
   taskEdit:string ='';
  
   addTask():void {
@@ -42,6 +42,15 @@ export class AppComponent {
     this.storage.isEdit(id);
 
   }
+
+    clicks:number = 0;
+    onChanged(increased/*,taskTitle*/){
+        if (increased) {
+          this.clicks++
+        /*this.taskTitle=taskTitle;
+        this.addTask();*/
+      };
+    }
 
 }
 
